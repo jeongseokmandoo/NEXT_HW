@@ -1,0 +1,307 @@
+body {
+    position: relative;
+    width: 375px;
+    height: 700px;
+    background: #FFFFFF;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.headbox {
+    position: absolute;
+    width: 375px;
+    height: 44px;
+    left: 0px;
+    top: 0px;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.timebox {
+    width: 30px;
+    height: 18px;
+    position: absolute;
+    left: 32.49px;
+    top: 13px;
+
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 18px;
+
+    color: #000000;
+}
+
+.details {
+    width: 60px;
+    height: 18px;
+    position: absolute;
+    left: 294px;
+    top: 13px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.nextbox {
+    width: 335px;
+    height: 20px;
+    position: absolute;
+    left: 20px;
+    top: 41px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.fa-chevron-left {
+    width: 45px;
+}
+
+.maname {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 800;
+    font-size: 16px;
+    line-height: 19px;
+
+    color: #000000;
+}
+
+.extrabox {
+    width: 45px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.profilebox {
+    width: 343px;
+    height: 89px;
+    position: absolute;
+    left: 16px;
+    top: 83px;
+    
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.profilephoto {
+    width: 89px;
+    height: 89px;
+}
+
+#profilephoto {
+    width: 89px;
+    height: 89px;
+    border-radius: 50%;
+}
+
+.profilebox div {
+    text-align: center;
+}
+
+.profilebox p {
+    margin-block-end: 0;
+    margin-block-start: 10%;
+}
+
+.namebox {
+    width: 343px;
+    height: 50px;
+    position: absolute;
+    left: 16px;
+    top: 185px;
+
+    font-size: 14px;
+}
+
+.followbox {
+    width: 343px;
+    height: 20px;
+    position: absolute;
+    top: 225px;
+    left: 16px;
+
+    font-size: 15px;
+}
+
+.boxbox {
+    width: 343px;
+    height: 37px;
+    position: absolute;
+    top: 290px;
+    left: 16px;
+    
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.boxbox div {
+    border-radius: 5px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.followingbutton {
+    border: 1px solid #C9C9C9;
+    width: 145px;
+    height: 28px;
+    font-size: 14px;
+}
+
+.messagebutton {
+    border: 1px solid #C9C9C9;
+    width: 145px;
+    height: 28px;
+    font-size: 14px;
+}
+
+.friendbutton {
+    border: 1px solid #C9C9C9;
+    width: 28px;
+    height: 28px;
+    font-size: 14px;
+}
+
+.iconbox {
+    width: 240px;
+    height: 24px;
+    position: absolute;
+    left: 67.5px;
+    top: 338px;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between
+}
+
+.playbutton {
+    opacity: 30%;
+}
+
+.friendtagbutton {
+    opacity: 30%;
+}
+
+.lining {
+    width: 112px;
+    height: 0px;
+    position: absolute;
+    top: 369px;
+    left: 16px;
+
+    border: 0.2px solid black;
+    transform: rotate(180deg);
+}
+
+.firstimage {
+    position: absolute;
+    width: 112px;
+    height: 113px;
+    left: 16px;
+    top: 370px;
+
+    border: 1px solid white;
+}
+
+#firstimage {
+    width: 112px;
+    height: 113px;
+}
+
+.secondimage {
+    position: absolute;
+    width: 112px;
+    height: 113px;
+    left: 129.5px;
+    top: 370px;
+
+    border: 1px solid white;
+}
+
+#secondimage {
+    width: 112px;
+    height: 113px;
+}
+
+.line {
+    width: 375px;
+    height: 0px;
+    position: absolute;
+    bottom: 51px;
+    left: 0px;
+
+    border: 0.2px solid #C9C9C9;
+    transform: rotate(180deg);
+}
+
+.homebottonbox {
+    position: absolute;
+    width: 375px;
+    height: 50px;
+    left: 0px;
+    bottom: 0px;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.homebottonbox .home {
+    width: 21px;
+    height: 21px;
+}
+
+.fa-magnifying-glass {
+    width: 20px;
+    height: 20px;
+    font-size: 20px;
+
+}
+
+.fa-plus {
+    width: 22px;
+    height: 22px;
+    font-size: 22px;
+}
+
+.video {
+    position: relative;
+    width: 22px;
+    height: 22px;
+}
+
+.video .fa-clapperboard {
+    font-size: 20px;
+    text-align: center;
+    position: absolute;
+    z-index: 1;
+}
+
+.video .fa-circle-play {
+    font-size: 4px;
+    text-align: center;
+
+    position: absolute;
+    left: 4.5px;
+    bottom: 4.1px;
+    color: #FFFFFF;
+
+    z-index: 2;
+
+}
+
+.fa-circle-user {
+    width: 22px;
+    height: 22px;
+    font-size: 20px;
+}
