@@ -1,0 +1,401 @@
+body {
+    width: 800px;
+    height: 720px;
+
+    display: flex;
+    justify-content: space-between;
+}
+.box1 {
+    width: 375px;
+    height: 720px;
+    position: relative;
+    background-color: whitesmoke;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    z-index: 2;
+}
+
+.headbox1 {
+    position: absolute;
+    width: 363px;
+    height: 44px;
+
+    display: flex;
+    flex-direction: row;
+    background-color: whitesmoke;
+}
+
+.tossbox {
+    position: absolute;
+    height: 44px;
+    width: 96px;
+}
+
+.tossbox img {
+    height: 44px;
+}
+
+.alarmbox {
+    position: absolute;
+    left: 260px;
+    height: 44px;
+    width: 96px;
+}
+
+.alarmbox img {
+    height: 44px;
+}
+
+.container1 {
+    position: absolute;
+    width: 337.5px;
+    height: 145px;
+    top: 44px;
+    background-color: white;
+    border-radius: 20px;
+ 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 1;
+}
+
+.container1-title {
+    position: absolute;
+    width: 295px;
+    height: 40.5px;
+    top: 10%;
+
+    display: flex;
+    justify-content: space-between;
+}
+
+.container1-title h3 {
+    margin-top: auto;  
+    margin-bottom: auto;
+    font-size: 20px;
+}
+
+.container1-title i {
+    z-index: 2;
+}
+
+.advertisement {
+    position: absolute;
+    width: 304px;
+    height: 48px;
+    top: 48%;
+
+    display: flex;
+    justify-content: flex-start;
+}
+
+.upward-img {
+    position: absolute;
+    height: 100%;
+
+}
+
+.upward-img img {
+    height: 100%;
+}
+
+.ad-text {
+    position: absolute;
+    height: 100%;
+    left: 58px;
+    line-height: 23px;
+}
+
+.ad-text span {
+    text-align: left;
+    font-size: 13px;
+    opacity: 60%;
+}
+
+.ad-text .bold {
+    font-size: 16px;
+    opacity: 70%;
+}
+
+.container2 {
+    position: absolute;
+    width: 337.5px;
+    height: 500px;
+    top: 200px;
+    background-color: white;
+    border-radius: 20px;
+ 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 1;
+}
+.asset {  
+    width: 295px;
+    height: 40.5px;
+    top: 20px;
+
+    margin-top: 22px;
+    margin-bottom: 5px;
+}
+
+.hanabank1 {
+    width: 304px;
+    height: 48px;
+    margin-bottom: 26px;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+}
+.hanabank1-img {   
+    height: 100%;
+}
+
+.tossbank {   
+    width: 304px;
+    height: 48px;
+    margin-bottom: 26px;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+}
+.tossbank-img {  
+    height: 100%;
+}
+
+.wooribank {   
+    width: 304px;
+    height: 48px;
+    margin-bottom: 26px;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+}
+.wooribank-img {   
+    height: 100%;
+}
+
+.hanabank {  
+    width: 304px;
+    height: 48px;
+    margin-bottom: 26px;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+}
+.hanabank-img {   
+    height: 100%;
+}
+
+.sinhanbank {   
+    width: 304px;
+    height: 48px;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+}
+.sinhanbank-img {    
+    height: 85%;
+}
+
+.text {
+    width: 200px;
+    margin-left: 10px;
+    margin-top: 4px;
+    font-size: 14px;
+    opacity: 50%;
+}
+
+.remittance {
+    width: 45px;
+    height: 25px;
+    background-color: whitesmoke;
+    border-radius: 5px;
+    margin-top: 10px;;
+
+    font-size: 11px;
+    font-weight: bold;
+    text-align: center;
+    line-height: 25px;
+    opacity: 70%;
+}
+
+.consumption {
+    z-index: 2;
+    position: absolute;
+    bottom: 16px;
+    left: 0;
+    width: 100%;
+    height: 100px;
+    background-color: white;
+    border-radius: 10%;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.consumption h3 {
+    margin-left: 44px;
+}
+
+.consumption .remittance {
+    z-index: 3;
+    width: 45px;
+    height: 25px;
+    background-color: whitesmoke;
+    border-radius: 5px;
+    margin-top: 18px;;
+    margin-right: 35.5px;
+
+    font-size: 11px;
+    text-align: center;
+    line-height: 25px;
+}
+
+.menuline {
+    z-index: 4;
+    position: absolute;
+    bottom: 60px;
+    width: 340px;
+    height: 0.5px;
+    background-color: whitesmoke;
+}
+
+.menu {
+    z-index: 3;
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    width: 100%;
+    height: 58px;
+    background-color: white;
+
+    display: flex;
+    justify-content: center;
+}
+
+.menu img {
+    width: 20px;
+    height: 20px;
+    margin-left: 25px;
+    margin-right: 25px;
+    margin-top: 7px;
+}
+
+.container3 {
+    width: 330px;
+    height: 130px;
+    border-radius: 20px;
+    background-color: white;
+    margin-bottom: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.point {
+    width: 304px;
+    height: 48px;
+    margin-top: 50px;
+    margin-bottom: 26px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+}
+.point img {
+    height: 100%
+}
+.point .ad-text {
+    width: 304px;
+    height: 44px;
+    margin-left: 35px;
+    margin-top: 4px;
+    font-size: 13px;
+    opacity: 60%;
+}
+
+.container4 {
+    width: 337.5px;
+    height: 140px;
+    border-radius: 20px;
+    background-color: white;
+    margin-bottom: 10px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.container4-title {
+    width: 290px;
+    height: 40.5px;
+    top: 20px;
+    margin-bottom: 20px;
+    margin-top: 2px;
+}
+.title {
+    font-size: 20px;
+}
+
+.container4 .textbox {
+    width: 304px;
+    height: 48px;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+}
+
+.textbox img {
+    height: 100%
+}
+
+.text span b {
+    font-size: 15px;
+}
+
+.container7 {
+    width: 337.5px;
+    height: 100px;
+
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+}
+.container7 .bx {
+    width: 160px;
+    height: 100%;
+    border-radius: 20px;
+    background-color: white;
+    margin-right: 10px;
+    line-height: 14px;
+}
+.container7 .bx1 {
+    width: 160px;
+    height: 100%;
+    border-radius: 20px;
+    background-color: white;
+    line-height: 14px;
+}
+
+.bx-title {
+    margin-top: 20px;
+    margin-left: 17px;
+    font-size: 14px;
+    opacity: 60%;
+}
+
+.bx-text {
+    margin-left: 17px;
+    opacity: 70%;
+}
