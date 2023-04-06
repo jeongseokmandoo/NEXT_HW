@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'category.css' %}">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>HOME</h1>
+    <div class="ul">
+        <div class="category_pile">
+            {% for category in categories %}
+            <h3 class="category_each" style="text-align: center;"><a href="{% url 'list' category.0.id %}">{{ category.0.name }}[{{ category.1 }}]</a></h3>
+            {% endfor %}
+        </div>
+    </div>
+    <a href="{% url 'new' %}">글 쓰러 가기</a>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'new.css' %}">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Article</title>
+</head>
+<body>
+    <h2>글쓰기 페이지</h2>
+    <form action="/new" method="post">
+        {% csrf_token %}
+        <div class="detail">
+            <div class="content">글 제목</div>
+            <input type="text" name="title" />
+        </div>
+        <div class="detail">
+            <div class="content">글 내용</div>
+            <textarea name="content" cols="50" rows="15"></textarea>
+        </div>
+        <div class="detail">
+            <div class="content">카테고리</div>
+            <select name="category">
+                <option value="">---------선택---------</option>
+                <option value="hobby">HOBBY</option>
+                <option value="food">FOOD</option>
+                <option value="programming">PROGRAMMING</option>
+            </select>
+        </div><br>
+        <div style="text-align: center;"><button type="submit">작성 완료</button></div>
+    </form>
+    <br>
+    <a href="{% url 'category' %}">홈으로</a>
+</body>
+</html>

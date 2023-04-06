@@ -1,0 +1,38 @@
+body {
+    background-color: black;
+    color: whitesmoke;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+a {
+    background-color: whitesmoke;
+    color: black;
+    border-radius: 5%;
+}
+
+.ul {
+    width: 60%;
+    height: 100px;
+
+}
+.category_pile {
+    width: 100%;
+    
+    border: 2px solid whitesmoke;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.category_each {
+    width: 15%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
