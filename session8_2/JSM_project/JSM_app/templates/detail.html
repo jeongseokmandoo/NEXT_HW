@@ -1,31 +1,58 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    {% load static %}
-    <link rel="stylesheet" href="{% static 'detail.css' %}">
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Article</title>
-  </head>
-  <body>
-    <h2>글 상세 페이지</h2>
-    <div class="box">
-      <div class="detail">
-        <h3>제목</h3>
-        <div> - {{ article.title }}</div>
-      </div><br>
-      <div class="detail">
-        <h3>내용</h3>
-        <div> - {{ article.content }}</div>
-      </div><br>
-      <div class="detail">
-        <h4>작성 시각</h4>
-        <div><h5> - {{ article.time_post }}</h5></div>
-      </div>
-    </div><br>
-    <a href="{% url 'home' %}">홈으로</a>
-    <a href="{% url 'update' article.pk %}">수정하기</a>
-    <a href="{% url 'delete' article.pk %}">삭제하기</a>
-  </body>
-</html>
+{% extends 'base.html' %}
+
+{% block css %}
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'detail.css' %}" />
+{% endblock %}
+
+{% block title %}
+<h2>Detail</h2>
+{% endblock %}
+
+{% block content %}
+<div class="box">
+  <div class="detail">
+    <h3>제목</h3>
+    <div> - {{ article.title }}</div>
+  </div><br>
+  <div class="detail">
+    <h3>내용</h3>
+    <div> - {{ article.content }}</div>
+  </div><br>
+  <div class="detail">
+    <h4>작성 시각</h4>
+    <div><h5> - {{ article.time_post }}</h5></div>
+  </div>
+</div><br>
+<div>
+  <a href="{% url 'home' %}">홈으로</a>
+  <a href="{% url 'update' article.pk %}">수정하기</a>
+  <a href="{% url 'delete' article.pk %}">삭제하기</a>
+</div>
+<h4>댓글</h4>
+<form method="POST">
+  {% csrf_token %}
+  <input type="text" name="content" placeholder="댓글을 입력해주세요" />
+  <button type="submit">작성하기</button>
+</form>
+
+{% for comment in article.comments.all %}
+<div>
+  <li>
+    {{comment.content}}<a href="{% url 'delete-comment' article.id comment.id %}">삭제</a>
+    <form action="{% url 'recomment' article.id comment.id %}" method="POST">
+      {% csrf_token %}
+      <input type="text" name="content" placeholder="답글" />
+      <button type="submit">입력</button>
+    </form>
+
+    {% for recomment in comment.recomments.all %}
+    <li>
+      {{recomment.body}}<a href="{% url 'delete-recomment' article.id comment.id recomment.id %}">삭제</a>
+    </li>
+    {% endfor %}
+  </li>
+</div>
+{% endfor %}
+
+{% endblock %}

@@ -1,32 +1,31 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    {% load static %}
-    <link rel="stylesheet" href="{% static 'update.css' %}">
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <h2>글수정 페이지</h2>
-    <form action="" method="post">
-        {% csrf_token %}
-        <div class="detail">
-            <div class="content" for="title">제목</div>
-            <input type="text" id="title" name="title" value="{{ article.title }}">
-        </div>
-        <div class="detail">
-            <div class="content" for="content">내용</div>
-            <textarea name="content" id="content" cols="50" rows="15">{{ article.content }}</textarea>
-        </div>
-        <div class="detail">
-            <div class="content" for="deadline">마감기한</div>
-            <input type="date" id="deadline" name="deadline" value="{{ article.deadline }}">
-        </div>
-        <button type="submit">수정하기</button>
-    </form>
-    <br>
-    <a href="{% url 'home' %}">홈으로</a>
-</body>
-</html>
+{% extends 'base.html' %}
+
+{% block css %}
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'update.css' %}">
+{% endblock %}
+
+{% block title %}
+<h1>Update</h1>
+{% endblock %}
+
+{% block content %}
+<form action="" method="post">
+    {% csrf_token %}
+    <div class="detail">
+        <div class="contents" for="title">제목</div>
+        <input type="text" id="title" name="title" value="{{ article.title }}">
+    </div>
+    <div class="detail">
+        <div class="contents" for="content">내용</div>
+        <textarea name="content" id="content" cols="50" rows="15">{{ article.content }}</textarea>
+    </div>
+    <div class="detail">
+        <div class="contents" for="deadline">마감기한</div>
+        <input type="date" id="deadline" name="deadline" value="{{ article.deadline }}">
+    </div>
+    <button type="submit">수정하기</button>
+</form>
+<br>
+<a href="{% url 'home' %}">홈으로</a>
+{% endblock %}

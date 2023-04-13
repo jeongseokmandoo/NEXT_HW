@@ -20,6 +20,7 @@ from JSM_app import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('base', views.base, name='base'),
     path('', views.home, name='home'),
     path('new', views.new, name='new'),
     path('list/<str:article_category>', views.list, name='list'),
@@ -27,4 +28,7 @@ urlpatterns = [
     path('todo', views.todo, name='todo'),
     path('update/<int:article_pk>/', views.update, name="update"),
     path('delete/<int:article_pk>/', views.delete, name="delete"),
+    path('delete-comment/<int:article_id>/<int:comment_id>', views.delete_comment, name='delete-comment'),
+    path('recomment/<int:article_id>/<int:comment_id>', views.recomment, name='recomment'),
+    path('delete-recomment/<int:article_id>/<int:comment_id>/<int:recomment_id>', views.delete_recomment, name='delete-recomment'),
 ]

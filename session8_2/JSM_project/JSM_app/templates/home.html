@@ -1,27 +1,26 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    {% load static %}
-    <link rel="stylesheet" type="text/css" href="{% static 'home.css' %}" />
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <h1>HOME</h1>
-    <div class="ul">
-        <div class="category_pile">
-            {% for category in categories %}
-                {% if category.0.name == 'TO_DO_LIST' %}
-                <h3 class="category_each"><a href="{% url 'todo' %}">{{ category.0.name }}[{{ category.1 }}]</a></h3>
-                {% else %}
-                <h3 class="category_each"><a href="{% url 'list' category.0.id %}">{{ category.0.name }}[{{ category.1 }}]</a></h3>
-                {% endif %}
-            <!-- style="text-align: center;" 이거 a 태그 안에 있었음 -->
-            {% endfor %}
-        </div>
+{% extends 'base.html' %}
+
+{% block css %}
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'home.css' %}">
+{% endblock %}
+
+{% block title %}
+<h1>HOME</h1>
+{% endblock %}
+
+{% block content %}
+<div class="ul">
+    <div class="category_pile">
+        {% for category in categories %}
+            {% if category.0.name == 'TO_DO_LIST' %}
+            <h3 class="category_each"><a href="{% url 'todo' %}">{{ category.0.name }}[{{ category.1 }}]</a></h3>
+            {% else %}
+            <h3 class="category_each"><a href="{% url 'list' category.0.id %}">{{ category.0.name }}[{{ category.1 }}]</a></h3>
+            {% endif %}
+        <!-- style="text-align: center;" 이거 a 태그 안에 있었음 -->
+        {% endfor %}
     </div>
-    <a href="{% url 'new' %}">글 쓰러 가기</a>
-</body>
-</html>
+</div>
+<a href="{% url 'new' %}">글 쓰러 가기</a>
+{% endblock %}

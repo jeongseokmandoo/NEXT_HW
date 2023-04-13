@@ -1,44 +1,43 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    {% load static %}
-    <link rel="stylesheet" href="{% static 'new.css' %}">
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>New Article</title>
-</head>
-<body>
-    <h2>글쓰기 페이지</h2>
-    <form action="/new" method="post">
-        {% csrf_token %}
-        <div class="detail">
-            <div class="content">글 제목</div>
-            <input type="text" name="title" />
-        </div>
-        <div class="detail">
-            <div class="content">글 내용</div>
-            <textarea name="content" cols="50" rows="15"></textarea>
-        </div>
-        <div class="detail">
-            <div class="content">카테고리</div>
-            <select name="category">
-                <option value="">---------선택---------</option>
-                <option value="HOBBY">HOBBY</option>
-                <option value="FOOD">FOOD</option>
-                <option value="PROGRAMMING">PROGRAMMING</option>
-                <option value="TO_DO_LIST">TO DO LIST</option>
-            </select>
-        </div>
-        <div>
-            <div>마감기한</div>
-            <input type="date" name="deadline" />
-        </div>
-        <br>
-        <div><button type="submit">작성 완료</button></div>
-        <!--  style="text-align: center;" div 태그 안에 있었음 -->
-    </form>
+{% extends 'base.html' %}
+
+{% block css %}
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'new.css' %}">
+{% endblock %}
+
+{% block title %}
+<h1>New</h1>
+{% endblock %}
+
+{% block content %}
+<form action="/new" method="post">
+    {% csrf_token %}
+    <div class="detail">
+        <div class="contents">글 제목</div>
+        <input type="text" name="title" />
+    </div>
+    <div class="detail">
+        <div class="contents">글 내용</div>
+        <textarea name="content" cols="50" rows="15"></textarea>
+    </div>
+    <div class="detail">
+        <div class="contents">카테고리</div>
+        <select name="category">
+            <option value="">---------선택---------</option>
+            <option value="HOBBY">HOBBY</option>
+            <option value="FOOD">FOOD</option>
+            <option value="PROGRAMMING">PROGRAMMING</option>
+            <option value="TO_DO_LIST">TO DO LIST</option>
+        </select>
+    </div>
+    <div>
+        <div>마감기한</div>
+        <input type="date" name="deadline" />
+    </div>
     <br>
-    <a href="{% url 'home' %}">홈으로</a>
-</body>
-</html>
+    <div><button type="submit">작성 완료</button></div>
+    <!--  style="text-align: center;" div 태그 안에 있었음 -->
+</form>
+<br>
+<a href="{% url 'home' %}">홈으로</a>
+{% endblock %}

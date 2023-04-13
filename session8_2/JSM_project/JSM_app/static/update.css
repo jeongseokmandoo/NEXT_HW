@@ -1,11 +1,4 @@
-body {
-    background-color: black;
-    color: whitesmoke;
 
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
 a {
     background-color: whitesmoke;
     color: black;
@@ -18,10 +11,11 @@ form {
 }
 
 .detail {
-
+    display: flex;
+    justify-content: left;
 }
 
-.content {
+.contents {
     margin: 3px;
     
 }

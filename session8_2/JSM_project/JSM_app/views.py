@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect
-from .models import Article, Category
+from .models import Article, Category, Comment, ReComment
 from datetime import datetime, timezone
 
 # Create your views here.
@@ -24,6 +24,15 @@ def list(request, article_category):
 
 def detail(request, article_id):
     article = Article.objects.get(pk = article_id)
+
+    if request.method == 'POST':
+        content = request.POST['content']
+        Comment.objects.create(
+            article = article,
+            content = content
+        )
+        return redirect('detail', article_id)
+
     return render(request, 'detail.html', {'article': article})
 
 def home(request):
@@ -70,3 +79,30 @@ def delete(request, article_pk):
     article.delete()
     
     return redirect('home')
+
+def delete_comment(request, article_id, comment_id):
+    comment = Comment.objects.get(id=comment_id)
+    comment.delete()
+    return redirect('detail', article_id)
+
+def base(request):
+    return render(request, 'base.html)')
+
+def recomment(request, article_id, comment_id):
+    article = Article.objects.get(id=article_id)
+
+    if request.method == "POST":
+        comment = Comment.objects.get(id=comment_id)
+        body = request.POST['content']
+        ReComment.objects.create(
+            comment = comment,
+            body = body,
+        )
+        return redirect('detail', article_id)
+    
+    return render(request, 'detail.html', {'article' : article})
+
+def delete_recomment(request, article_id, comment_id, recomment_id):
+    recomment = ReComment.objects.get(id= recomment_id)
+    recomment.delete()
+    return redirect('detail', article_id)
