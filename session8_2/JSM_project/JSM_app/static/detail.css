@@ -17,3 +17,25 @@ a {
 .detail {
     margin-left: 5%;
 }
+
+.box-one {
+    border: 1px solid whitesmoke;
+    border-radius: 3px;
+    margin: 2px;
+}
+
+.commentbox{
+    width: 50%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+}
+
+.comment {
+    border-bottom: 0.5px solid whitesmoke;
+}
+
+.recommentbox{
+    margin-left: 10%;
+}

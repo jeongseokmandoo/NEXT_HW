@@ -2,7 +2,7 @@
 
 {% block css %}
 {% load static %}
-<link rel="stylesheet" type="text/css" href="{% static 'detail.css' %}" />
+<link rel="stylesheet" type="text/css" href="{% static 'detail.css' %}?v=1" />
 {% endblock %}
 
 {% block title %}
@@ -26,33 +26,44 @@
 </div><br>
 <div>
   <a href="{% url 'home' %}">홈으로</a>
+  {% if user.is_authenticated and user.pk == article.author.pk %}
   <a href="{% url 'update' article.pk %}">수정하기</a>
   <a href="{% url 'delete' article.pk %}">삭제하기</a>
+  {% endif %}
 </div>
-<h4>댓글</h4>
-<form method="POST">
-  {% csrf_token %}
-  <input type="text" name="content" placeholder="댓글을 입력해주세요" />
-  <button type="submit">작성하기</button>
-</form>
+<div class="commentbox">
+  <h4>댓글</h4>
 
-{% for comment in article.comments.all %}
-<div>
-  <li>
-    {{comment.content}}<a href="{% url 'delete-comment' article.id comment.id %}">삭제</a>
-    <form action="{% url 'recomment' article.id comment.id %}" method="POST">
-      {% csrf_token %}
-      <input type="text" name="content" placeholder="답글" />
-      <button type="submit">입력</button>
-    </form>
+  {% for comment in article.comments.all %}
+  <div class="box-one">
+    <div class="comment">
+      {{comment.content}}{% if user.is_authenticated and user.pk == comment.author.pk %}
+      <a href="{% url 'delete-comment' article.id comment.id %}">삭제</a>
+      {% endif %}
+    </div>
+    <div class="recommentbox">
 
-    {% for recomment in comment.recomments.all %}
-    <li>
-      {{recomment.body}}<a href="{% url 'delete-recomment' article.id comment.id recomment.id %}">삭제</a>
-    </li>
-    {% endfor %}
-  </li>
+      {% for recomment in comment.recomments.all %}
+      <div class="recomment">
+        - {{recomment.body}}{% if user.is_authenticated and user.pk == recomment.author.pk %}
+        <a href="{% url 'delete-recomment' article.id comment.id recomment.id %}">삭제</a>
+        {% endif %}
+      </div>
+      {% endfor %}
+      <form action="{% url 'recomment' article.id comment.id %}" method="POST">
+        {% csrf_token %}
+        <input type="text" name="content" placeholder="답글" />
+        <button type="submit">입력</button>
+      </form>
+    </div>
+  </div>
+  {% endfor %}
+  
+  <form method="POST">
+    {% csrf_token %}
+    <input type="text" name="content" placeholder="댓글을 입력해주세요" />
+    <button type="submit">작성하기</button>
+  </form>
 </div>
-{% endfor %}
 
 {% endblock %}
