@@ -12,7 +12,7 @@ def new(request):
             content = request.POST['content'],
             category = Category.objects.get(name = request.POST['category'])
         )
-        return redirect('list')
+        return redirect('category')
 
     return render(request, 'new.html')
 

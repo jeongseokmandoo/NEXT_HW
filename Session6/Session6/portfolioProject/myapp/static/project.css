@@ -29,7 +29,7 @@ body {
 
 .intro {
     width: 100%;
-    height: 700px;
+    height: 800px;
     color: black;
 
     display: flex;
@@ -45,8 +45,8 @@ body {
 
 
 .insta {
-    width: 20%;
-    height: 50%;
+    width: 24%;
+    height: 83%;
+    background-image: url(insta.png);
     background-size: cover;
-    background-image: url(insta.img);
 }
