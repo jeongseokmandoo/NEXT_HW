@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{% static 'base.css' %}" />
+    <style>ul{list-style: none; padding-left: 0px;}</style>
+    {% block css %}
+    {% endblock css %}
+    <title>Document</title>
+</head>
+<body>
+    <nav id="navbar">
+        <div class="navbar_logo">
+            <a href="{% url 'blog:home' %}">home</a>
+        </div>
+        <ul class="navbar_menu">
+            <li class="navbar_menu_item">
+                <a href="{% url 'blog:new' %}">New</a>
+            </li>
+            <li class="navbar_menu_item">
+                <a href="{% url 'blog:home' %}">Home</a>
+            </li>
+            <span class="navbar_menu_item">Hello, ㅇㅇ</span>
+            <li class="navbar_menu_item">
+                <a href="{% url 'blog:logout' %}">Logout</a>
+            </li>
+            <li class="navbar_menu_item">
+                <a href="{% url 'blog:login' %}">Login</a>
+            </li>
+            <li class="navbar_menu_item">
+                <a href="{% url 'blog:signup' %}">Signup</a>
+            </li>
+        </ul>
+    </nav>
+    <div class="title">
+        {% block title %}
+
+        {% endblock title %}
+    </div>
+    <div class="content">
+        {% block content %}
+
+        {% endblock content %}
+    </div>
+</body>
+</html>

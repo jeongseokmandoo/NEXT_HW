@@ -1,0 +1,14 @@
+{% extends 'accounts/base.html' %}
+
+{% block css %}
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'accounts/home.css' %}">
+{% endblock %}
+
+{% block title %}
+<h1>독후감 블로그 - 회원관리</h1>
+{% endblock %}
+
+{% block content %}
+<a href="{% url 'blog:home'%}">독후감 블로그</a>
+{% endblock %}
