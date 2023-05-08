@@ -28,7 +28,7 @@ def logout(request):
 def signup(request):
     if request.method == 'POST':
         username = request.POST['username']
-        password = request.POST['passward']
+        password = request.POST['password']
 
         exist_user = User.objects.filter(username=username)
 
