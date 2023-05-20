@@ -1,0 +1,57 @@
+@font-face {
+  font-family: 'TTTtangsbudaejjigaeB';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2212@1.0/TTTtangsbudaejjigaeB.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+}
+
+body {
+  font-family: 'TTTtangsbudaejjigaeB';
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+header {
+  background-color: #e3aaaa;
+  padding: 20px;
+  text-align: center;
+}
+
+h1 {
+  color: #841010;
+  margin: 0;
+}
+
+main {
+  margin: 20px;
+}
+
+p {
+  color: #555;
+  font-size: 22px;
+  line-height: 1.5;
+}
+
+.cta-button {
+  background-color: #fd7070;
+  border: thin solid;
+  border-color: #841010;
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin-top: 20px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+#choicesSection{
+  text-align: center;
+  display: flex;
+  flex-direction:row;
+  justify-content: center;
+}
+
